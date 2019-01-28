@@ -2,6 +2,7 @@ import {PurchaseList, Purchase} from './lib.js';
 
 const formEl = document.querySelector('#purchase-form');
 const nameEl = document.querySelector('#purchase-name');
+const priceEl = document.querySelector('#purchase-price');
 const listEl = document.querySelector('#purchase-list');
 
 const purchaseList = new PurchaseList();
@@ -13,17 +14,20 @@ formEl.addEventListener('submit', function(evt) {
     evt.preventDefault(); // просим браузер, не делать то, что он делает по умолчанию
 
     const name = nameEl.value;
+    const price = priceEl.value;
     // TODO: валидация
 
-    const purchase = new Purchase(name);
+    const purchase = new Purchase(name,price);
     purchaseList.add(purchase);
 
-    nameEl.value = ''; // очистка формы
+    nameEl.value = '';
+    priceEl.value = ''; // очистка формы
 
     // создали элемент
     const liEl = document.createElement('li');
     // подставили textContent
     liEl.textContent = purchase.name;
+    liEl.textContent = purchase.price;
     // console.log(liEl.parentElement);
     // пока у элемента нет родителя, он нигде не отображается
     liEl.className = 'list-group-item';
