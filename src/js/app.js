@@ -2,6 +2,7 @@ import {PurchaseList, Purchase} from './lib.js';
 
 const formEl = document.querySelector('#purchase-form');
 const nameEl = document.querySelector('#purchase-name');
+const categorieEl = document.querySelector('#purchase-categorie');
 const priceEl = document.querySelector('#purchase-price');
 const listEl = document.querySelector('#purchase-list');
 
@@ -15,19 +16,22 @@ formEl.addEventListener('submit', function(evt) {
 
     const name = nameEl.value;
     const price = priceEl.value;
+    const categorie = categorieEl.value;
     // TODO: валидация
 
     const purchase = new Purchase(name,price);
     purchaseList.add(purchase);
 
     nameEl.value = '';
-    priceEl.value = ''; // очистка формы
+    priceEl.value = '';
+    categorieEl.value = '';// очистка формы
 
     // создали элемент
     const liEl = document.createElement('li');
     // подставили textContent
     liEl.textContent = purchase.name;
     liEl.textContent = purchase.price;
+    liEl.textContent = purchase.categorie;
     // console.log(liEl.parentElement);
     // пока у элемента нет родителя, он нигде не отображается
     liEl.className = 'list-group-item';
