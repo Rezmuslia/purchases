@@ -1,4 +1,4 @@
-import {PurchaseList, Purchase} from './lib.js';
+import {PurchaseList, Purchase,} from './lib.js';
 
 const formEl = document.querySelector('#purchase-form');
 const nameEl = document.querySelector('#purchase-name');
@@ -15,33 +15,35 @@ formEl.addEventListener('submit', function(evt) {
     evt.preventDefault(); // просим браузер, не делать то, что он делает по умолчанию
 
     const name = nameEl.value;
-    const price = priceEl.value;
     const categorie = categorieEl.value;
+    const price = priceEl.value;
     // TODO: валидация
 
-    const purchase = new Purchase(name,price);
+    const purchase = new Purchase(name);
     purchaseList.add(purchase);
 
+    //console.log(purchase);
+
     nameEl.value = '';
-    priceEl.value = '';
-    categorieEl.value = '';// очистка формы
+    categorieEl.value = '';
+   priceEl.value = '';// очистка формы
 
     // создали элемент
     const liEl = document.createElement('li');
-    // подставили textContent
-    liEl.textContent = purchase.name;
-    liEl.textContent = purchase.price;
-    liEl.textContent = purchase.categorie;
-    // console.log(liEl.parentElement);
-    // пока у элемента нет родителя, он нигде не отображается
-    liEl.className = 'list-group-item';
 
-    //const removeEl = document.createElement('button');
-    //removeEl.className = 'btn btn-danger btn-sm float-right';
-    //removeEl.textContent = 'Remove';
+    // подставили textContent
+    liEl.textContent = `название: ${purchase.name}, категория: ${purchase.categorie}цена:${purchase.price}`;
+
+   liEl.className = 'list-group-item';
+
+
+
+    // const removeEl = document.createElement('button');
+    // removeEl.className = 'btn btn-danger btn-sm float-right';
+    // removeEl.textContent = 'Remove';
 
    // removeEl.addEventListener('click', function(evt) {
-    //    liEl.remove(); // не везде работает
+    //     liEl.remove(); // не везде работает
     //    taskList.remove(task);
     //});
 
@@ -49,4 +51,5 @@ formEl.addEventListener('submit', function(evt) {
 
     //liEl.appendChild(removeEl);
     listEl.appendChild(liEl);
-});
+
+ });
