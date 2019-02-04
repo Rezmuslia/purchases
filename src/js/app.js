@@ -73,7 +73,7 @@ formEl.addEventListener('submit', function(evt) {
 
         // Самая трудоёмкая часть синхронизация между DOM и памятью
 
-        //liEl.appendChild(removeEl);
+        liEl.appendChild(filterEl);
         listEl.appendChild(liEl);
 
     });
