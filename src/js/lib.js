@@ -1,10 +1,3 @@
-//export class Purchase{
-    //constructor(name, categorie ) {
-    //    this.name = name;
-    //    this.categorie = categorie;
-    //    this.price = price;
-    //   // this.result = this.result()
-    //}}
 
 export class Purchase {
     constructor(name, categorie, price) {
@@ -25,34 +18,30 @@ const purchases = [
             this.items = [];
         }
 
+        add(item) {
+            this.items.push(item); // в конец
+        }}
+
+        export class FilterList {
+        constructor() {
+            this.items = [];
+        }
+
+        filter (item){
+    let result = PurchaseList.filter(
+                ({categorie}) => categorie === 'продукты')
+                .reduce(
+                    (acc, {price}) => acc + price, 0);// 0 - initial value);
 
 
-
-
-            add(item) {
-        this.items.push(item); // в конец
-    }
-
-
-       // let result = PurchasesList[0];
-
-    //result = PurchaseList.filter(
-    //        ({categorie}) => categorie === 'продукты'
-    //    )
-    //    .reduce(
-    //        (acc, {price}) => acc + price, 0 // 0 - initial value
-       // );
-//
-
-
-
-
-   //reduce(array, callback, accumulator = 0) {
-   //     for (const currentValue of array) {
-  // //         accumulator = callback(accumulator, currentValue);
-   //     }
-   //     return accumulator;
-   // }
+            reduce(array, callback, this.accumulator = 0)
+            {
+                for (const currentValue of array) {
+                    this.accumulator = callback(accumulator, currentValue);
+                }
+                return accumulator;
+            }
+        }
 
 
 
