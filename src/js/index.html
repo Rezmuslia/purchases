@@ -19,18 +19,34 @@
                 <div class="form-group mb-2 mt-2">
                     <label for="purchase-name" class="sr-only">Purchase name</label>
                     <input type="text" class="form-control" id="purchase-name">
+                    <label for="purchase-categorie" class="sr-only">Purchase categorie</label>
+                    <input type="text" class="form-control" id="purchase-categorie">
                     <label for="purchase-price" class="sr-only">Purchase price</label>
                     <input type="number" class="form-control" id="purchase-price">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 mt-2">Add</button>
+
             </form>
             <ul class="purchase-group" id="purchase-list">
             </ul>
         </div>
     </div>
+    <div class="container">
+    <div class="row justify-content-center">
+        <!-- 12 -->
+        <div class="col-6">
+            <form class="form-inline" id="purchase-form2">
+                <button type="submit" class="btn btn-primary mb-2 mt-2">max</button>
+
+            </form>
+            <ul class="purchase-group2" id="max-list">
+            </ul>
+        </div>
+    </div>
+    </div>
 </div>
 
-<script src="js/lib.js" type="module"></script>
-<script src="js/app.js" type="module"></script>
+<script src="lib.js" type="module"></script>
+<script src="app.js" type="module"></script>
 </body>
 </html>
