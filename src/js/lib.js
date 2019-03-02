@@ -8,7 +8,7 @@ export class Purchase {
 
 const purchases = [
     new Purchase('заправка', 'авто', 2000),
-    new Purchase('завтрак', 'еда', 1000),
+    new Purchase('еда', 'еда', 1000),
     new Purchase('заправка', 'авто', 2000),
 ];
 
