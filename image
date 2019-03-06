@@ -1,0 +1,8 @@
+imageEl.innersrc = ' https://im0-tub-ru.yandex.net/i?id=36457ed5d0992146fae87ad20e106d26-l&n=13&w=1024&h=695';
+let draggable = null;
+
+imageEl.addEventListener('dragstart', (event) => {
+    event.dataTransfer.setDragImage('https://im0-tub-ru.yandex.net/i?id=36457ed5d0992146fae87ad20e106d26-l&n=13&w=1024&h=695','1', '2');
+    draggable = event.currentTarget;
+    console.log('dragstart');
+});
